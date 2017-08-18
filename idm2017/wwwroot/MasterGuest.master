@@ -1,0 +1,283 @@
+﻿<%@ Master Language="VB" CodeFile="MasterGuest.master.vb" Inherits="MasterGuest" %>
+
+<%@ Register src="footer.ascx" tagname="footer" tagprefix="uc2" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<!-- Favicons Icon -->
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<title>Indian Dental Mart</title>
+<!-- Mobile Specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/revslider.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+<link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+         <style>
+         #gvCart tr td
+         {
+             border:1px solid transparent;
+         }
+       
+    </style>
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css' />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="cms-index-index cms-home-page">
+    <form id="form1" runat="server">
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-xs-7"> 
+            <div class="phone">
+            <div class="phone-box"><strong>Whatsapp: </strong> <span>+91 89719 23442</span></div>
+          </div>
+          </div>
+          <div class="col-sm-8 col-xs-5">
+            <div class="toplinks">
+              <div class="links">
+                  <div class="login"><a href="Login.aspx"><span>My Account</span></a></div>
+                <div class="login"><a href="Login.aspx"><span>Wishlist</span></a></div>
+                  <div class="login"><a href="Login.aspx"><span>Login</span></a></div>
+                  <div class="login"><a href="Contact.aspx"><span>Contact</span></a></div>
+              </div>
+              <!-- links --> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-3 col-md-2 col-xs-2"> 
+          <!-- Header Logo -->
+          <div class="logo"><a title="Indian Dental Mart" href="Default.aspx"><img alt="Indian Dental Mart" src="images/idmlogo.png" /></a> </div>
+          <!-- End Header Logo --> 
+        </div>
+          <div class="col-lg-7 col-md-6 col-xs-8">
+              <div class="top-cart-contain">
+                   <asp:Panel runat="server" DefaultButton="btnSearch">
+              <asp:TextBox ID="txtSearch" runat="server" placeholder="Search here.." CssClass="searchbtn"></asp:TextBox>
+                       <asp:Button ID="btnSearch" runat="server" style="display:none" OnClick="btnSearch_Click" />
+                       </asp:Panel>
+              </div>
+          </div>
+       <div class="col-lg-2 col-md-4 col-xs-2">
+          <div class="top-cart-contain pull-right"> 
+            <!-- Top Cart -->
+            <div class="mini-cart">
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#"> <i class="glyphicon glyphicon-shopping-cart"></i>
+                <div class="cart-box"><span class="title"></span><span id="cart-total"><asp:Label ID="lblTotalQty" Text="0" runat="server"></asp:Label></span></div>
+                </a></div>
+              <div>
+                <div style="display: none;" class="top-cart-content arrow_box">
+                  <div class="block-subtitle"><a href="Cart.aspx">Go to Cart</a></div>
+                  <ul id="cart-sidebar" class="mini-products-list">
+                      <asp:GridView ID="gvCart" runat="server" AutoGenerateColumns="false" ShowHeader="false" ShowFooter="false">
+                          <Columns>
+                              <asp:TemplateField>
+                                  <ItemTemplate>
+                                      <li class="item even">
+                                          <asp:HyperLink ID="hlnkImage" runat="server" CssClass="product-image">
+                                              <asp:Image ID="img1" runat="server" ImageUrl="img-di/1.jpg" Width="50" /></asp:HyperLink>
+                                            <div class="detail-item">
+                                                <div class="product-details"> 
+                                                <p class="product-name"><asp:HyperLink ID="hlnkName" runat="server"><asp:Label ID="lblName" runat="server" Font-Size="Small"></asp:Label></asp:HyperLink></p>
+                                                </div>
+                                                <div class="product-details-bottom">
+                                                    <span class="price"><asp:Label ID="lblMRP" Font-Strikeout="true" Font-Size="Small" runat="server"></asp:Label></span> 
+                                                    <span class="price"><asp:Label ID="lblSalePrice" Font-Size="Small" runat="server"></asp:Label></span> 
+                                                    <span class="title-desc">Qty:</span> <strong><asp:Label ID="lblQty" runat="server" Text="1"></asp:Label></strong> </div>
+                                                <div><asp:HiddenField ID="hdnIdfr" runat="server"></asp:HiddenField></div>
+                                            </div>
+                                      </li>
+                                  </ItemTemplate>
+                              </asp:TemplateField>
+                          </Columns>
+                      </asp:GridView>
+                    
+                    <%--<li class="item last odd"> <a class="product-image" href="#" title="  Sample Product "><img alt="  Sample Product " src="products-images/p2.jpg" width="80"></a>
+                      <div class="detail-item">
+                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
+                          <p class="product-name"> <a href="#" title="  Sample Product "> Sample Product </a> </p>
+                        </div>
+                        <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
+                      </div>
+                    </li>--%>
+                  </ul>
+                  <div class="top-subtotal">Subtotal: <span class="price"><asp:Label ID="lblTotalAmt" runat="server" Text="0.00"></asp:Label></span></div>
+                  <div class="actions">
+                    <button class="btn-checkout" type="button"><span><a href="Checkout.aspx" style="color:white;">Checkout</a></span></button>
+                    <button class="view-cart" type="button"><span><a href="Cart.aspx" style="color:white;">View Cart</a></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Top Cart -->
+            <div id="ajaxconfig_info" style="display:none"> <a href="#/"></a>
+              <input value="" type="hidden" />
+              <input id="enable_module" value="1" type="hidden" />
+              <input class="effect_to_cart" value="1" type="hidden" />
+              <input class="title_shopping_cart" value="Go to shopping cart" type="hidden" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header --> 
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="nav-inner"> 
+ <!-- mobile-menu -->
+        <div class="hidden-desktop" id="mobile-menu">
+          <ul class="navmenu">
+            <li>
+              <div class="menutop">
+                <div class="toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div>
+                <h2>Menu</h2>
+              </div>
+                <div id="divmobilemenu" runat="server">
+
+                </div>
+              <!--navmenu--> 
+            </li>
+          </ul>
+        </div>
+        <!--End mobile-menu -->
+          <div id="divmainmenu" runat="server"></div>
+        
+        
+        <!-- Search-col -->
+       <%-- <div class="search-box pull-right">
+            <input type="text" placeholder="Search entire store here..." value="Search" maxlength="70" name="search" id="search">
+            <button type="button" class="btn btn-default  search-btn-bg"> <span class="glyphicon glyphicon-search"></span>&nbsp;</button>
+        </div>--%>
+        <!-- End Search-col --> 
+ </div>
+    </div>
+  </div>
+</nav>
+
+ 
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+        
+<!-- Footer -->
+<uc2:footer ID="footer1" runat="server" />
+<!-- End Footer -->
+
+<!-- JavaScript --> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/revslider.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script> 
+<script type="text/javascript" src="js/parallax.js"></script> 
+<script type="text/javascript" src="js/jquery.flexslider.js"></script> 
+<script type="text/javascript" src="js/cloud-zoom.js"></script>
+<script type='text/javascript'>
+        jQuery(document).ready(function(){
+            jQuery('#rev_slider_4').show().revolution({
+                dottedOverlay: 'none',
+                delay: 5000,
+                startwidth: 770,
+                startheight: 460,
+
+                hideThumbs: 200,
+                thumbWidth: 200,
+                thumbHeight: 50,
+                thumbAmount: 2,
+
+                navigationType: 'thumb',
+                navigationArrows: 'solo',
+                navigationStyle: 'round',
+
+                touchenabled: 'on',
+                onHoverStop: 'on',
+                
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+            
+                spinner: 'spinner0',
+                keyboardNavigation: 'off',
+
+                navigationHAlign: 'center',
+                navigationVAlign: 'bottom',
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+
+                soloArrowLeftHalign: 'left',
+                soloArrowLeftValign: 'center',
+                soloArrowLeftHOffset: 20,
+                soloArrowLeftVOffset: 0,
+
+                soloArrowRightHalign: 'right',
+                soloArrowRightValign: 'center',
+                soloArrowRightHOffset: 20,
+                soloArrowRightVOffset: 0,
+
+                shadow: 0,
+                fullWidth: 'on',
+                fullScreen: 'off',
+
+                stopLoop: 'off',
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+
+                shuffle: 'off',
+
+                autoHeight: 'off',
+                forceFullWidth: 'on',
+                fullScreenAlignForce: 'off',
+                minFullScreenHeight: 0,
+                hideNavDelayOnMobile: 1500,
+            
+                hideThumbsOnMobile: 'off',
+                hideBulletsOnMobile: 'off',
+                hideArrowsOnMobile: 'off',
+                hideThumbsUnderResolution: 0,
+
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0,
+                fullScreenOffsetContainer: ''
+            });
+        });
+        </script>
+    </form>
+</body>
+</html>

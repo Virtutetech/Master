@@ -1,0 +1,3100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.jasdental.in/ws_jas_app" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.jasdental.in/ws_jas_app" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.jasdental.in/ws_jas_app">
+      <s:element name="CheckMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendOTPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacebookLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacebookLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertFacebookLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OTP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckOTPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerOrderHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerOrderHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerOrderHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderHistoryAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderHistoryAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderHistoryAdminResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductCategoriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertProductCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsPopular" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertProductCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertProductCategoriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsPopular" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProductCategoriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBrands">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBrandsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrands">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertBrandsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBrands">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BrandIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateBrandsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubCategoriesNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MainCategoryIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubCategoriesNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubCategoriesNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSubCategoriesNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MainCategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSubCategoriesNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertSubCategoriesNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSubCategoriesNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSubCategoriesNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSubCategoriesNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertReferralFriends">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertReferralFriendsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertReferralFriendsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MRP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalePrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertProductsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProducts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MRP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SalePrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProductsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenu">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MainCategoryIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentCategoryIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubMenuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductsFromName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubCategoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductsFromNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductsFromNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductsFromSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchQry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductsFromSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductsFromSearchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertShippingAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Landmark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertShippingAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertShippingAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShippingAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Landmark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShippingAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateShippingAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCartItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserIdfr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressIdfr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCartItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCartItemsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestingforAppointments">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestingforAppointmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestingforAppointmentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestingforPayments">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestingforPaymentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestingforPaymentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="temp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMobile" />
+  </wsdl:message>
+  <wsdl:message name="CheckMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPSoapIn">
+    <wsdl:part name="parameters" element="tns:SendOTP" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPSoapOut">
+    <wsdl:part name="parameters" element="tns:SendOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFacebookLogin" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFacebookLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOTP" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerOrderHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerOrderHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderHistoryAdmin" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderHistoryAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetProductCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertProductCategories" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertProductCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProductCategories" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBrands" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBrands" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBrands" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubCategoriesNew" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubCategoriesNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSubCategoriesNew" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSubCategoriesNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSubCategoriesNew" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSubCategoriesNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertReferralFriends" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertReferralFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertProducts" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProducts" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubMenu" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductsFromName" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductsFromNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductsFromSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductsFromSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertShippingAddress" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertShippingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShippingAddress" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShippingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCartItems" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCartItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestingforAppointmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:TestingforAppointments" />
+  </wsdl:message>
+  <wsdl:message name="TestingforAppointmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:TestingforAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestingforPaymentsSoapIn">
+    <wsdl:part name="parameters" element="tns:TestingforPayments" />
+  </wsdl:message>
+  <wsdl:message name="TestingforPaymentsSoapOut">
+    <wsdl:part name="parameters" element="tns:TestingforPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStates" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCity" />
+  </wsdl:message>
+  <wsdl:message name="GetCitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMobileHttpGetIn">
+    <wsdl:part name="Mobile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPHttpGetIn">
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Mobile" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginHttpGetIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="OTP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="StateName" type="s:string" />
+    <wsdl:part name="CityName" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistoryHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminHttpGetIn">
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpGetIn">
+    <wsdl:part name="Mobile" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductCategoriesHttpGetIn" />
+  <wsdl:message name="GetProductCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesHttpGetIn">
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="IsPopular" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesHttpGetIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="IsPopular" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsHttpGetIn" />
+  <wsdl:message name="GetBrandsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsHttpGetIn">
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsHttpGetIn">
+    <wsdl:part name="BrandIdfr" type="s:string" />
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewHttpGetIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewHttpGetIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewHttpGetIn">
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="MobileNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsHttpGetIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsHttpGetIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+    <wsdl:part name="ProductName" type="s:string" />
+    <wsdl:part name="ProductDescription" type="s:string" />
+    <wsdl:part name="MRP" type="s:string" />
+    <wsdl:part name="SalePrice" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsHttpGetIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="ProductIdfr" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+    <wsdl:part name="ProductName" type="s:string" />
+    <wsdl:part name="ProductDescription" type="s:string" />
+    <wsdl:part name="MRP" type="s:string" />
+    <wsdl:part name="SalePrice" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpGetIn" />
+  <wsdl:message name="GetMenuHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuHttpGetIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameHttpGetIn">
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchHttpGetIn">
+    <wsdl:part name="SearchQry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="PersonName" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="Landmark" type="s:string" />
+    <wsdl:part name="Pincode" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="AddressIdfr" type="s:string" />
+    <wsdl:part name="PersonName" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="Landmark" type="s:string" />
+    <wsdl:part name="Pincode" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsHttpGetIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="ProductList" type="s:string" />
+    <wsdl:part name="AddressIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestingforAppointmentsHttpGetIn" />
+  <wsdl:message name="TestingforAppointmentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestingforPaymentsHttpGetIn" />
+  <wsdl:message name="TestingforPaymentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesHttpGetIn">
+    <wsdl:part name="temp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpGetIn">
+    <wsdl:part name="StateName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMobileHttpPostIn">
+    <wsdl:part name="Mobile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPHttpPostIn">
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Mobile" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginHttpPostIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacebookLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="OTP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOTPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="StateName" type="s:string" />
+    <wsdl:part name="CityName" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistoryHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerOrderHistoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminHttpPostIn">
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryAdminHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpPostIn">
+    <wsdl:part name="Mobile" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="DeviceType" type="s:string" />
+    <wsdl:part name="RegId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductCategoriesHttpPostIn" />
+  <wsdl:message name="GetProductCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesHttpPostIn">
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="IsPopular" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesHttpPostIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+    <wsdl:part name="IsPopular" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsHttpPostIn" />
+  <wsdl:message name="GetBrandsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsHttpPostIn">
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsHttpPostIn">
+    <wsdl:part name="BrandIdfr" type="s:string" />
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewHttpPostIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubCategoriesNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewHttpPostIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubCategoriesNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewHttpPostIn">
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSubCategoriesNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="MobileNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertReferralFriendsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsHttpPostIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsHttpPostIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+    <wsdl:part name="ProductName" type="s:string" />
+    <wsdl:part name="ProductDescription" type="s:string" />
+    <wsdl:part name="MRP" type="s:string" />
+    <wsdl:part name="SalePrice" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertProductsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsHttpPostIn">
+    <wsdl:part name="CategoryIdfr" type="s:string" />
+    <wsdl:part name="SubCategoryIdfr" type="s:string" />
+    <wsdl:part name="ProductIdfr" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+    <wsdl:part name="ProductName" type="s:string" />
+    <wsdl:part name="ProductDescription" type="s:string" />
+    <wsdl:part name="MRP" type="s:string" />
+    <wsdl:part name="SalePrice" type="s:string" />
+    <wsdl:part name="ImagePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuHttpPostIn" />
+  <wsdl:message name="GetMenuHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuHttpPostIn">
+    <wsdl:part name="MainCategoryIdfr" type="s:string" />
+    <wsdl:part name="ParentCategoryIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubMenuHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameHttpPostIn">
+    <wsdl:part name="CategoryName" type="s:string" />
+    <wsdl:part name="SubCategoryName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchHttpPostIn">
+    <wsdl:part name="SearchQry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductsFromSearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="PersonName" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="Landmark" type="s:string" />
+    <wsdl:part name="Pincode" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertShippingAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="AddressIdfr" type="s:string" />
+    <wsdl:part name="PersonName" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="Landmark" type="s:string" />
+    <wsdl:part name="Pincode" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShippingAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsHttpPostIn">
+    <wsdl:part name="UserIdfr" type="s:string" />
+    <wsdl:part name="ProductList" type="s:string" />
+    <wsdl:part name="AddressIdfr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertCartItemsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestingforAppointmentsHttpPostIn" />
+  <wsdl:message name="TestingforAppointmentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestingforPaymentsHttpPostIn" />
+  <wsdl:message name="TestingforPaymentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesHttpPostIn">
+    <wsdl:part name="temp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpPostIn">
+    <wsdl:part name="StateName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="DentalMartSoap">
+    <wsdl:operation name="CheckMobile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mobile exist check</wsdl:documentation>
+      <wsdl:input message="tns:CheckMobileSoapIn" />
+      <wsdl:output message="tns:CheckMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send one time OTP</wsdl:documentation>
+      <wsdl:input message="tns:SendOTPSoapIn" />
+      <wsdl:output message="tns:SendOTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Facebook Login</wsdl:documentation>
+      <wsdl:input message="tns:InsertFacebookLoginSoapIn" />
+      <wsdl:output message="tns:InsertFacebookLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OTP Validation</wsdl:documentation>
+      <wsdl:input message="tns:CheckOTPSoapIn" />
+      <wsdl:output message="tns:CheckOTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Password</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePasswordSoapIn" />
+      <wsdl:output message="tns:UpdatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileSoapIn" />
+      <wsdl:output message="tns:UpdateProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileSoapIn" />
+      <wsdl:output message="tns:GetProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History Customer</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerOrderHistorySoapIn" />
+      <wsdl:output message="tns:GetCustomerOrderHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History for Admin</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderHistoryAdminSoapIn" />
+      <wsdl:output message="tns:GetOrderHistoryAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Login</wsdl:documentation>
+      <wsdl:input message="tns:CheckLoginSoapIn" />
+      <wsdl:output message="tns:CheckLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Product Categories</wsdl:documentation>
+      <wsdl:input message="tns:GetProductCategoriesSoapIn" />
+      <wsdl:output message="tns:GetProductCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductCategoriesSoapIn" />
+      <wsdl:output message="tns:InsertProductCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductCategoriesSoapIn" />
+      <wsdl:output message="tns:UpdateProductCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Brands</wsdl:documentation>
+      <wsdl:input message="tns:GetBrandsSoapIn" />
+      <wsdl:output message="tns:GetBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Brands</wsdl:documentation>
+      <wsdl:input message="tns:InsertBrandsSoapIn" />
+      <wsdl:output message="tns:InsertBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Brands</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBrandsSoapIn" />
+      <wsdl:output message="tns:UpdateBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Sub Categories New</wsdl:documentation>
+      <wsdl:input message="tns:GetSubCategoriesNewSoapIn" />
+      <wsdl:output message="tns:GetSubCategoriesNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:InsertSubCategoriesNewSoapIn" />
+      <wsdl:output message="tns:InsertSubCategoriesNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSubCategoriesNewSoapIn" />
+      <wsdl:output message="tns:UpdateSubCategoriesNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Referral Friends</wsdl:documentation>
+      <wsdl:input message="tns:InsertReferralFriendsSoapIn" />
+      <wsdl:output message="tns:InsertReferralFriendsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsSoapIn" />
+      <wsdl:output message="tns:GetProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductsSoapIn" />
+      <wsdl:output message="tns:InsertProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Products</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductsSoapIn" />
+      <wsdl:output message="tns:UpdateProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuSoapIn" />
+      <wsdl:output message="tns:GetMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Sub Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetSubMenuSoapIn" />
+      <wsdl:output message="tns:GetSubMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromNameSoapIn" />
+      <wsdl:output message="tns:GetProductsFromNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products from Search</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromSearchSoapIn" />
+      <wsdl:output message="tns:GetProductsFromSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get User Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:GetShippingAddressSoapIn" />
+      <wsdl:output message="tns:GetShippingAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertShippingAddressSoapIn" />
+      <wsdl:output message="tns:InsertShippingAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:UpdateShippingAddressSoapIn" />
+      <wsdl:output message="tns:UpdateShippingAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Cart Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertCartItemsSoapIn" />
+      <wsdl:output message="tns:InsertCartItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Appointments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforAppointmentsSoapIn" />
+      <wsdl:output message="tns:TestingforAppointmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Payments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforPaymentsSoapIn" />
+      <wsdl:output message="tns:TestingforPaymentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All States</wsdl:documentation>
+      <wsdl:input message="tns:GetStatesSoapIn" />
+      <wsdl:output message="tns:GetStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Cities</wsdl:documentation>
+      <wsdl:input message="tns:GetCitySoapIn" />
+      <wsdl:output message="tns:GetCitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DentalMartHttpGet">
+    <wsdl:operation name="CheckMobile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mobile exist check</wsdl:documentation>
+      <wsdl:input message="tns:CheckMobileHttpGetIn" />
+      <wsdl:output message="tns:CheckMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send one time OTP</wsdl:documentation>
+      <wsdl:input message="tns:SendOTPHttpGetIn" />
+      <wsdl:output message="tns:SendOTPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Facebook Login</wsdl:documentation>
+      <wsdl:input message="tns:InsertFacebookLoginHttpGetIn" />
+      <wsdl:output message="tns:InsertFacebookLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OTP Validation</wsdl:documentation>
+      <wsdl:input message="tns:CheckOTPHttpGetIn" />
+      <wsdl:output message="tns:CheckOTPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Password</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePasswordHttpGetIn" />
+      <wsdl:output message="tns:UpdatePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileHttpGetIn" />
+      <wsdl:output message="tns:UpdateProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileHttpGetIn" />
+      <wsdl:output message="tns:GetProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History Customer</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerOrderHistoryHttpGetIn" />
+      <wsdl:output message="tns:GetCustomerOrderHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History for Admin</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderHistoryAdminHttpGetIn" />
+      <wsdl:output message="tns:GetOrderHistoryAdminHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Login</wsdl:documentation>
+      <wsdl:input message="tns:CheckLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Product Categories</wsdl:documentation>
+      <wsdl:input message="tns:GetProductCategoriesHttpGetIn" />
+      <wsdl:output message="tns:GetProductCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductCategoriesHttpGetIn" />
+      <wsdl:output message="tns:InsertProductCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductCategoriesHttpGetIn" />
+      <wsdl:output message="tns:UpdateProductCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Brands</wsdl:documentation>
+      <wsdl:input message="tns:GetBrandsHttpGetIn" />
+      <wsdl:output message="tns:GetBrandsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Brands</wsdl:documentation>
+      <wsdl:input message="tns:InsertBrandsHttpGetIn" />
+      <wsdl:output message="tns:InsertBrandsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Brands</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBrandsHttpGetIn" />
+      <wsdl:output message="tns:UpdateBrandsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Sub Categories New</wsdl:documentation>
+      <wsdl:input message="tns:GetSubCategoriesNewHttpGetIn" />
+      <wsdl:output message="tns:GetSubCategoriesNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:InsertSubCategoriesNewHttpGetIn" />
+      <wsdl:output message="tns:InsertSubCategoriesNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSubCategoriesNewHttpGetIn" />
+      <wsdl:output message="tns:UpdateSubCategoriesNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Referral Friends</wsdl:documentation>
+      <wsdl:input message="tns:InsertReferralFriendsHttpGetIn" />
+      <wsdl:output message="tns:InsertReferralFriendsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsHttpGetIn" />
+      <wsdl:output message="tns:GetProductsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductsHttpGetIn" />
+      <wsdl:output message="tns:InsertProductsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Products</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductsHttpGetIn" />
+      <wsdl:output message="tns:UpdateProductsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuHttpGetIn" />
+      <wsdl:output message="tns:GetMenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Sub Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetSubMenuHttpGetIn" />
+      <wsdl:output message="tns:GetSubMenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromNameHttpGetIn" />
+      <wsdl:output message="tns:GetProductsFromNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products from Search</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromSearchHttpGetIn" />
+      <wsdl:output message="tns:GetProductsFromSearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get User Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:GetShippingAddressHttpGetIn" />
+      <wsdl:output message="tns:GetShippingAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertShippingAddressHttpGetIn" />
+      <wsdl:output message="tns:InsertShippingAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:UpdateShippingAddressHttpGetIn" />
+      <wsdl:output message="tns:UpdateShippingAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Cart Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertCartItemsHttpGetIn" />
+      <wsdl:output message="tns:InsertCartItemsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Appointments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforAppointmentsHttpGetIn" />
+      <wsdl:output message="tns:TestingforAppointmentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Payments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforPaymentsHttpGetIn" />
+      <wsdl:output message="tns:TestingforPaymentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All States</wsdl:documentation>
+      <wsdl:input message="tns:GetStatesHttpGetIn" />
+      <wsdl:output message="tns:GetStatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Cities</wsdl:documentation>
+      <wsdl:input message="tns:GetCityHttpGetIn" />
+      <wsdl:output message="tns:GetCityHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DentalMartHttpPost">
+    <wsdl:operation name="CheckMobile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mobile exist check</wsdl:documentation>
+      <wsdl:input message="tns:CheckMobileHttpPostIn" />
+      <wsdl:output message="tns:CheckMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send one time OTP</wsdl:documentation>
+      <wsdl:input message="tns:SendOTPHttpPostIn" />
+      <wsdl:output message="tns:SendOTPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Facebook Login</wsdl:documentation>
+      <wsdl:input message="tns:InsertFacebookLoginHttpPostIn" />
+      <wsdl:output message="tns:InsertFacebookLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OTP Validation</wsdl:documentation>
+      <wsdl:input message="tns:CheckOTPHttpPostIn" />
+      <wsdl:output message="tns:CheckOTPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Password</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePasswordHttpPostIn" />
+      <wsdl:output message="tns:UpdatePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProfileHttpPostIn" />
+      <wsdl:output message="tns:UpdateProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Profile</wsdl:documentation>
+      <wsdl:input message="tns:GetProfileHttpPostIn" />
+      <wsdl:output message="tns:GetProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History Customer</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerOrderHistoryHttpPostIn" />
+      <wsdl:output message="tns:GetCustomerOrderHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Order History for Admin</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderHistoryAdminHttpPostIn" />
+      <wsdl:output message="tns:GetOrderHistoryAdminHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Login</wsdl:documentation>
+      <wsdl:input message="tns:CheckLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Product Categories</wsdl:documentation>
+      <wsdl:input message="tns:GetProductCategoriesHttpPostIn" />
+      <wsdl:output message="tns:GetProductCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductCategoriesHttpPostIn" />
+      <wsdl:output message="tns:InsertProductCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update ProductCategories</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductCategoriesHttpPostIn" />
+      <wsdl:output message="tns:UpdateProductCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Brands</wsdl:documentation>
+      <wsdl:input message="tns:GetBrandsHttpPostIn" />
+      <wsdl:output message="tns:GetBrandsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Brands</wsdl:documentation>
+      <wsdl:input message="tns:InsertBrandsHttpPostIn" />
+      <wsdl:output message="tns:InsertBrandsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Brands</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBrandsHttpPostIn" />
+      <wsdl:output message="tns:UpdateBrandsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Sub Categories New</wsdl:documentation>
+      <wsdl:input message="tns:GetSubCategoriesNewHttpPostIn" />
+      <wsdl:output message="tns:GetSubCategoriesNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:InsertSubCategoriesNewHttpPostIn" />
+      <wsdl:output message="tns:InsertSubCategoriesNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update SubCategories New</wsdl:documentation>
+      <wsdl:input message="tns:UpdateSubCategoriesNewHttpPostIn" />
+      <wsdl:output message="tns:UpdateSubCategoriesNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Referral Friends</wsdl:documentation>
+      <wsdl:input message="tns:InsertReferralFriendsHttpPostIn" />
+      <wsdl:output message="tns:InsertReferralFriendsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsHttpPostIn" />
+      <wsdl:output message="tns:GetProductsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertProductsHttpPostIn" />
+      <wsdl:output message="tns:InsertProductsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Products</wsdl:documentation>
+      <wsdl:input message="tns:UpdateProductsHttpPostIn" />
+      <wsdl:output message="tns:UpdateProductsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetMenuHttpPostIn" />
+      <wsdl:output message="tns:GetMenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Sub Menu</wsdl:documentation>
+      <wsdl:input message="tns:GetSubMenuHttpPostIn" />
+      <wsdl:output message="tns:GetSubMenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromNameHttpPostIn" />
+      <wsdl:output message="tns:GetProductsFromNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Products from Search</wsdl:documentation>
+      <wsdl:input message="tns:GetProductsFromSearchHttpPostIn" />
+      <wsdl:output message="tns:GetProductsFromSearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get User Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:GetShippingAddressHttpPostIn" />
+      <wsdl:output message="tns:GetShippingAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertShippingAddressHttpPostIn" />
+      <wsdl:output message="tns:InsertShippingAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Shipping Address</wsdl:documentation>
+      <wsdl:input message="tns:UpdateShippingAddressHttpPostIn" />
+      <wsdl:output message="tns:UpdateShippingAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Cart Products</wsdl:documentation>
+      <wsdl:input message="tns:InsertCartItemsHttpPostIn" />
+      <wsdl:output message="tns:InsertCartItemsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Appointments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforAppointmentsHttpPostIn" />
+      <wsdl:output message="tns:TestingforAppointmentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test service for Payments</wsdl:documentation>
+      <wsdl:input message="tns:TestingforPaymentsHttpPostIn" />
+      <wsdl:output message="tns:TestingforPaymentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All States</wsdl:documentation>
+      <wsdl:input message="tns:GetStatesHttpPostIn" />
+      <wsdl:output message="tns:GetStatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Cities</wsdl:documentation>
+      <wsdl:input message="tns:GetCityHttpPostIn" />
+      <wsdl:output message="tns:GetCityHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DentalMartSoap" type="tns:DentalMartSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckMobile">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/SendOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertFacebookLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetCustomerOrderHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetOrderHistoryAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertProductCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProductCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertReferralFriends" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetSubMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductsFromName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductsFromSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetShippingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertShippingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateShippingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/TestingforAppointments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/TestingforPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <soap:operation soapAction="http://www.jasdental.in/ws_jas_app/GetCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DentalMartSoap12" type="tns:DentalMartSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckMobile">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/SendOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertFacebookLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetCustomerOrderHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetOrderHistoryAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertProductCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProductCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateSubCategoriesNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertReferralFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetSubMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductsFromName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetProductsFromSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetShippingAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertShippingAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/UpdateShippingAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/InsertCartItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/TestingforAppointments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/TestingforPayments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <soap12:operation soapAction="http://www.jasdental.in/ws_jas_app/GetCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DentalMartHttpGet" type="tns:DentalMartHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CheckMobile">
+      <http:operation location="/CheckMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <http:operation location="/SendOTP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <http:operation location="/InsertFacebookLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <http:operation location="/CheckOTP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <http:operation location="/UpdatePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <http:operation location="/UpdateProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <http:operation location="/GetProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <http:operation location="/GetCustomerOrderHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <http:operation location="/GetOrderHistoryAdmin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <http:operation location="/CheckLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <http:operation location="/GetProductCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <http:operation location="/InsertProductCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <http:operation location="/UpdateProductCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <http:operation location="/GetBrands" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <http:operation location="/InsertBrands" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <http:operation location="/UpdateBrands" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <http:operation location="/GetSubCategoriesNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <http:operation location="/InsertSubCategoriesNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <http:operation location="/UpdateSubCategoriesNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <http:operation location="/InsertReferralFriends" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <http:operation location="/GetProducts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <http:operation location="/InsertProducts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <http:operation location="/UpdateProducts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <http:operation location="/GetMenu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <http:operation location="/GetSubMenu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <http:operation location="/GetProductsFromName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <http:operation location="/GetProductsFromSearch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <http:operation location="/GetShippingAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <http:operation location="/InsertShippingAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <http:operation location="/UpdateShippingAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <http:operation location="/InsertCartItems" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <http:operation location="/TestingforAppointments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <http:operation location="/TestingforPayments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <http:operation location="/GetStates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <http:operation location="/GetCity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DentalMartHttpPost" type="tns:DentalMartHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CheckMobile">
+      <http:operation location="/CheckMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <http:operation location="/SendOTP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacebookLogin">
+      <http:operation location="/InsertFacebookLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOTP">
+      <http:operation location="/CheckOTP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <http:operation location="/UpdatePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <http:operation location="/UpdateProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <http:operation location="/GetProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerOrderHistory">
+      <http:operation location="/GetCustomerOrderHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryAdmin">
+      <http:operation location="/GetOrderHistoryAdmin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <http:operation location="/CheckLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <http:operation location="/GetProductCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProductCategories">
+      <http:operation location="/InsertProductCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductCategories">
+      <http:operation location="/UpdateProductCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <http:operation location="/GetBrands" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <http:operation location="/InsertBrands" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrands">
+      <http:operation location="/UpdateBrands" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoriesNew">
+      <http:operation location="/GetSubCategoriesNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubCategoriesNew">
+      <http:operation location="/InsertSubCategoriesNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubCategoriesNew">
+      <http:operation location="/UpdateSubCategoriesNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertReferralFriends">
+      <http:operation location="/InsertReferralFriends" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <http:operation location="/GetProducts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProducts">
+      <http:operation location="/InsertProducts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+      <http:operation location="/UpdateProducts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <http:operation location="/GetMenu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubMenu">
+      <http:operation location="/GetSubMenu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromName">
+      <http:operation location="/GetProductsFromName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromSearch">
+      <http:operation location="/GetProductsFromSearch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingAddress">
+      <http:operation location="/GetShippingAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingAddress">
+      <http:operation location="/InsertShippingAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShippingAddress">
+      <http:operation location="/UpdateShippingAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCartItems">
+      <http:operation location="/InsertCartItems" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforAppointments">
+      <http:operation location="/TestingforAppointments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestingforPayments">
+      <http:operation location="/TestingforPayments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStates">
+      <http:operation location="/GetStates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <http:operation location="/GetCity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DentalMart">
+    <wsdl:port name="DentalMartSoap" binding="tns:DentalMartSoap">
+      <soap:address location="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DentalMartSoap12" binding="tns:DentalMartSoap12">
+      <soap12:address location="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DentalMartHttpGet" binding="tns:DentalMartHttpGet">
+      <http:address location="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DentalMartHttpPost" binding="tns:DentalMartHttpPost">
+      <http:address location="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.jasdental.in/ws_jas_app/dentalmart.asmx?wsdl" docRef="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" xmlns:q1="http://www.jasdental.in/ws_jas_app" binding="q1:DentalMartSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.jasdental.in/ws_jas_app/dentalmart.asmx" xmlns:q2="http://www.jasdental.in/ws_jas_app" binding="q2:DentalMartSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
